@@ -1,0 +1,24 @@
+h1 Payments
+
+div= link_to 'New', new_payment_path
+
+div
+  table
+    thead
+      tr
+        th Name
+        th Description
+        th Amount
+        th Discount
+        th Actions
+    tbody
+      - @payments.each do |payment|
+        tr
+          td= payment.name
+          td= payment.description
+          td= payment.localized.amount
+          td= payment.localized.discount
+          td
+            div= link_to 'show', payment
+            div= link_to 'Edit', edit_payment_path(payment)
+            div= link_to 'Destroy', payment, method: :delete

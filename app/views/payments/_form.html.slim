@@ -1,0 +1,6 @@
+= simple_form_for(@payment.localized) do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :amount, as: :string
+  = f.input :discount, as: :string
+  = f.submit
